@@ -1,0 +1,71 @@
+{
+  "name": "git-user-name",
+  "description": "Get a user's name from git config at the project or global scope, depending on what git uses in the current context.",
+  "version": "2.0.0",
+  "homepage": "https://github.com/jonschlinkert/git-user-name",
+  "author": "Jon Schlinkert (http://github.com/https://github.com/jonschlinkert)",
+  "contributors": [
+    "Jon Schlinkert (http://twitter.com/jonschlinkert)",
+    "宝码 (http://noyobo.com)"
+  ],
+  "repository": "jonschlinkert/git-user-name",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/git-user-name/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "extend-shallow": "^2.0.1",
+    "git-config-path": "^1.0.1",
+    "parse-git-config": "^1.1.1"
+  },
+  "devDependencies": {
+    "gulp-format-md": "^1.0.0",
+    "mocha": "^2.4.5"
+  },
+  "keywords": [
+    "git",
+    "gitconfig",
+    "github",
+    "global",
+    "name",
+    "user",
+    "username"
+  ],
+  "verb": {
+    "run": true,
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "related": {
+      "list": [
+        "git-branch",
+        "git-config-path",
+        "git-repo-name",
+        "git-user-email",
+        "git-username",
+        "parse-git-config"
+      ]
+    },
+    "reflinks": [
+      "verb"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}

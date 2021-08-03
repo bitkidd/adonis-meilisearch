@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "mrm": "mrm --preset=@adonisjs/mrm-preset"
+  },
+  "devDependencies": {
+    "@adonisjs/mrm-preset": "^4.1.2",
+    "mrm": "^3.0.8"
+  }
+}

@@ -4,5 +4,5 @@ import { MeiliSearchConfig } from '@ioc:Adonis/Addons/MeiliSearch'
 // MeiliSearch config
 export const imgix: MeiliSearchConfig = {
   host: Env.get('MEILISEARCH_HOST'),
-  apiKey: Env.get('MEIISEARCH_API_KEY'),
+  apiKey: Env.get('MEILISEARCH_API_KEY'),
 }

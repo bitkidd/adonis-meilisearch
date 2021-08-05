@@ -1,6 +1,6 @@
 {
   "name": "@bitkidd/adonis-meilisearch",
-  "description": "adonis,meilisearch",
+  "description": "adonis, meilisearch",
   "version": "0.19.0",
   "author": "Chirill Ceban",
   "bugs": {
@@ -13,7 +13,7 @@
     "pretest": "npm run lint",
     "test": "node japaFile.js",
     "clean": "del build",
-    "copyfiles": "copyfiles \"templates/*.txt\" build",
+    "copyfiles": "copyfiles \"templates/*.txt\" \"instructions.md\" build",
     "compile": "npm run lint && npm run clean && npm run copyfiles && tsc",
     "build": "npm run compile",
     "prepublishOnly": "npm run build",
@@ -51,7 +51,8 @@
   "files": [
     "build/adonis-typings",
     "build/providers",
-    "build/templates"
+    "build/templates",
+    "build/instructions.md"
   ],
   "config": {
     "commitizen": {
@@ -64,6 +65,7 @@
   },
   "adonisjs": {
     "types": "@bitkidd/adonis-meilisearch",
+    "instructionsMd": "./build/instructions.md",
     "providers": [
       "@bitkidd/adonis-meilisearch"
     ],

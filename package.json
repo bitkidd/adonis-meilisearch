@@ -1,7 +1,7 @@
 {
   "name": "@bitkidd/adonis-meilisearch",
   "description": "adonis, meilisearch",
-  "version": "0.26.0",
+  "version": "0.27.0",
   "bugs": {
     "url": "https://github.com/bitkidd/adonis-meilisearch/issues"
   },
@@ -114,6 +114,6 @@
     "anyBranch": false
   },
   "dependencies": {
-    "meilisearch": "^0.26.0"
+    "meilisearch": "^0.27.0"
   }
 }

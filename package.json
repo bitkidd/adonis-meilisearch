@@ -1,18 +1,18 @@
 {
   "name": "@bitkidd/adonis-meilisearch",
   "description": "adonis, meilisearch",
-  "version": "0.25.0",
-  "author": "Chirill Ceban",
+  "version": "0.26.0",
   "bugs": {
     "url": "https://github.com/bitkidd/adonis-meilisearch/issues"
   },
   "homepage": "https://github.com/bitkidd/adonis-meilisearch#readme",
+  "main": "build/providers/MeilisearchProvider.js",
   "types": "build/adonis-typings/index.d.ts",
   "scripts": {
     "mrm": "mrm --preset=@adonisjs/mrm-preset",
     "pretest": "npm run lint",
-    "test": "node japaFile.js",
-    "clean": "del build",
+    "test": "node -r @adonisjs/require-ts/build/register bin/test.ts",
+    "clean": "del-cli build",
     "copyfiles": "copyfiles \"templates/*.txt\" \"instructions.md\" build",
     "compile": "npm run lint && npm run clean && npm run copyfiles && tsc",
     "build": "npm run compile",
@@ -20,49 +20,38 @@
     "lint": "eslint . --ext=.ts",
     "format": "prettier --write .",
     "commit": "git-cz",
-    "release": "np",
+    "release": "np --message=\"chore(release): %s\"",
     "version": "npm run build",
     "sync-labels": "github-label-sync --labels ./node_modules/@adonisjs/mrm-preset/gh-labels.json bitkidd/adonis-meilisearch"
   },
+  "author": "Chirill Ceban",
+  "license": "MIT",
   "devDependencies": {
-    "@adonisjs/core": "^5.7.5",
+    "@adonisjs/core": "^5.8.5",
     "@adonisjs/mrm-preset": "^5.0.3",
-    "@adonisjs/require-ts": "^2.0.11",
-    "@types/node": "^17.0.25",
-    "commitizen": "^4.2.4",
+    "@adonisjs/require-ts": "^2.0.12",
+    "@types/node": "^18.6.4",
+    "commitizen": "^4.2.5",
     "copyfiles": "^2.4.1",
     "cz-conventional-changelog": "^3.3.0",
-    "del-cli": "^4.0.1",
-    "doctoc": "^2.1.0",
-    "eslint": "^8.13.0",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.21.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-adonis": "^2.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "github-label-sync": "^2.2.0",
-    "husky": "^7.0.4",
-    "japa": "^4.0.0",
+    "husky": "^8.0.1",
     "mrm": "^4.0.0",
-    "np": "^7.6.1",
-    "prettier": "^2.6.2",
-    "typescript": "^4.6.3"
+    "np": "^7.6.2",
+    "prettier": "^2.7.1",
+    "typescript": "^4.7.4"
   },
-  "license": "MIT",
-  "main": "build/providers/MeilisearchProvider.js",
   "files": [
     "build/adonis-typings",
     "build/providers",
     "build/templates",
     "build/instructions.md"
   ],
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
-  },
-  "np": {
-    "contents": ".",
-    "anyBranch": false
-  },
   "adonisjs": {
     "types": "@bitkidd/adonis-meilisearch",
     "instructionsMd": "./build/instructions.md",
@@ -78,7 +67,53 @@
       ]
     }
   },
+  "mrmConfig": {
+    "core": false,
+    "license": "MIT",
+    "services": [],
+    "minNodeVersion": "16.13.1",
+    "probotApps": []
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:adonis/typescriptPackage",
+      "prettier"
+    ],
+    "plugins": [
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "endOfLine": "auto"
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "build"
+  ],
+  "prettier": {
+    "trailingComma": "es5",
+    "semi": false,
+    "singleQuote": true,
+    "useTabs": false,
+    "quoteProps": "consistent",
+    "bracketSpacing": true,
+    "arrowParens": "always",
+    "printWidth": 100
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  },
   "dependencies": {
-    "meilisearch": "^0.25.0"
+    "meilisearch": "^0.26.0"
   }
 }
